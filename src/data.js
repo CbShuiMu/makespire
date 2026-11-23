@@ -1,0 +1,255 @@
+export const categories = {
+  characters: {
+    label: "角色",
+    singular: "角色",
+    title: "角色",
+    description: "管理角色设定、初始属性与核心机制。",
+    fields: "初始属性与机制",
+    color: "violet",
+    icon: "character",
+  },
+  cards: {
+    label: "卡牌",
+    singular: "卡牌",
+    title: "卡牌",
+    description: "管理卡牌类型、费用、稀有度与效果。",
+    fields: "费用与效果",
+    color: "blue",
+    icon: "cards",
+  },
+  relics: {
+    label: "遗物",
+    singular: "遗物",
+    title: "遗物",
+    description: "管理遗物稀有度、触发条件与效果。",
+    fields: "触发条件与效果",
+    color: "amber",
+    icon: "relic",
+  },
+  potions: {
+    label: "药水",
+    singular: "药水",
+    title: "药水",
+    description: "管理药水稀有度、使用目标与效果。",
+    fields: "使用目标与效果",
+    color: "green",
+    icon: "potion",
+  },
+};
+
+// Keep demo timestamps in the past so newly saved work appears first.
+const demoUpdated = new Date(Date.now() - 86400000).toISOString();
+
+export const seedProjects = [
+  {
+    id: "ember",
+    name: "余烬行者",
+    description: "以消耗和余烬为核心机制的角色扩展。",
+    color: "ember",
+    status: "进行中",
+    updated: demoUpdated,
+    tags: ["原创角色", "余烬机制"],
+  },
+  {
+    id: "forest",
+    name: "幽林秘语",
+    description: "围绕中毒、格挡和生命回复的主题扩展。",
+    color: "forest",
+    status: "构思中",
+    updated: new Date(Date.now() - 2 * 86400000).toISOString(),
+    tags: ["主题扩展", "自然之力"],
+  },
+];
+
+export const seedItems = [
+  {
+    id: "char-ember",
+    kind: "characters",
+    name: "余烬行者",
+    subtitle: "行走于灰烬之间的流浪剑士",
+    description:
+      "每当你消耗一张牌，获得 1 层余烬。回合结束时，将余烬转化为格挡。",
+    projectId: "ember",
+    rarity: "初始",
+    cardType: "攻击",
+    cost: 1,
+    hp: 75,
+    gold: 99,
+    art: "character",
+    color: "ember",
+    status: "草稿",
+  },
+  {
+    id: "char-forest",
+    kind: "characters",
+    name: "林间守望",
+    subtitle: "倾听根系深处的低语",
+    description: "每回合首次施加中毒时，获得 3 点格挡。",
+    projectId: "forest",
+    rarity: "初始",
+    cardType: "技能",
+    cost: 1,
+    hp: 68,
+    gold: 99,
+    art: "character",
+    color: "forest",
+    status: "草稿",
+  },
+  {
+    id: "card-ember",
+    kind: "cards",
+    name: "余烬之刃",
+    subtitle: "火焰熄灭之后，锋芒依旧。",
+    description: "造成 8 点伤害。\n获得 2 层余烬。",
+    projectId: "ember",
+    rarity: "普通",
+    cardType: "攻击",
+    cost: 1,
+    art: "sword",
+    color: "ember",
+    status: "已完成",
+  },
+  {
+    id: "card-flame",
+    kind: "cards",
+    name: "重燃",
+    subtitle: "灰烬之下，总有火光。",
+    description: "获得 6 点格挡。\n抽 1 张牌。消耗。",
+    projectId: "ember",
+    rarity: "罕见",
+    cardType: "技能",
+    cost: 1,
+    art: "flame",
+    color: "ember",
+    status: "草稿",
+  },
+  {
+    id: "card-forest",
+    kind: "cards",
+    name: "幽林回响",
+    subtitle: "每一片叶子，都记得你的名字。",
+    description: "给予所有敌人 3 层中毒。\n获得 5 点格挡。",
+    projectId: "forest",
+    rarity: "稀有",
+    cardType: "技能",
+    cost: 2,
+    art: "forest",
+    color: "forest",
+    status: "已完成",
+  },
+  {
+    id: "card-star",
+    kind: "cards",
+    name: "星火不息",
+    subtitle: "让最后一颗火星，照亮长夜。",
+    description: "每当你消耗一张牌，\n对所有敌人造成 2 点伤害。",
+    projectId: "ember",
+    rarity: "稀有",
+    cardType: "能力",
+    cost: 2,
+    art: "flame",
+    color: "violet",
+    status: "草稿",
+  },
+  {
+    id: "relic-ember",
+    kind: "relics",
+    name: "不灭火种",
+    subtitle: "它记得第一场火的温度。",
+    description: "每场战斗开始时，获得 3 层余烬。",
+    projectId: "ember",
+    rarity: "初始",
+    art: "relic",
+    color: "ember",
+    status: "已完成",
+  },
+  {
+    id: "relic-forest",
+    kind: "relics",
+    name: "森之心",
+    subtitle: "一颗仍在跳动的翡翠。",
+    description: "每回合首次施加中毒时，回复 1 点生命。",
+    projectId: "forest",
+    rarity: "稀有",
+    art: "relic",
+    color: "forest",
+    status: "草稿",
+  },
+  {
+    id: "potion-ember",
+    kind: "potions",
+    name: "熔火药剂",
+    subtitle: "轻轻摇匀，小心烫手。",
+    description: "获得 5 层余烬。对所有敌人造成 10 点伤害。",
+    projectId: "ember",
+    rarity: "罕见",
+    target: "所有敌人",
+    art: "potion",
+    color: "ember",
+    status: "草稿",
+  },
+  {
+    id: "potion-forest",
+    kind: "potions",
+    name: "月露精华",
+    subtitle: "收集于满月落下之前。",
+    description: "回复 10 点生命。移除所有虚弱。",
+    projectId: "forest",
+    rarity: "普通",
+    target: "自身",
+    art: "potion",
+    color: "forest",
+    status: "已完成",
+  },
+].map((item) => ({ ...item, updated: demoUpdated }));
+
+export function newItem(kind, projectId = "") {
+  return {
+    id: crypto.randomUUID(),
+    kind,
+    name: "",
+    subtitle: "",
+    description: "",
+    projectId,
+    rarity: "普通",
+    cardType: "攻击",
+    cost: 1,
+    hp: 75,
+    gold: 99,
+    target: "自身",
+    art: {
+      characters: "character",
+      cards: "sword",
+      relics: "relic",
+      potions: "potion",
+    }[kind],
+    color: "ember",
+    status: "草稿",
+  };
+}
+
+// Frontend-only, deterministic proposal. Replace this adapter with the Agent API later.
+export function createProposal(prompt, kind, projectId = "") {
+  const forest = /森林|自然|毒|树|生长|草|治疗/.test(prompt);
+  const template = seedItems.find(
+    (i) => i.kind === kind && i.color === (forest ? "forest" : "ember"),
+  );
+  const quoted = prompt.match(/[“「《](.{1,16}?)[”」》]/);
+  return {
+    ...newItem(kind, projectId),
+    ...template,
+    id: crypto.randomUUID(),
+    name: quoted?.[1] || template.name,
+    projectId,
+    status: "草稿",
+    brief: prompt,
+  };
+}
+
+export function relativeDate(date) {
+  const days = Math.max(
+    0,
+    Math.floor((Date.now() - new Date(date)) / 86400000),
+  );
+  return days === 0 ? "今天" : days === 1 ? "昨天" : `${days} 天前`;
+}

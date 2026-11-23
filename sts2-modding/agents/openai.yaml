@@ -1,0 +1,4 @@
+interface:
+  display_name: "杀戮尖塔 2 模组制作"
+  short_description: "基于 BaseLib 与本地源码检索，完成尖塔 2 模组开发、打包及验证"
+  default_prompt: "使用 $sts2-modding，根据我的需求开发杀戮尖塔 2 模组，核对 BaseLib 和游戏 API，完成代码、本地化、资源检查与构建验证。"

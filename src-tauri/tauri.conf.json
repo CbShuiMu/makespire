@@ -1,0 +1,48 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Spire Factory",
+  "version": "0.2.0",
+  "identifier": "com.shuimu.spirefactory",
+  "build": {
+    "beforeDevCommand": "npm run ui:dev",
+    "beforeBuildCommand": "npm run ui:build",
+    "devUrl": "http://127.0.0.1:1420",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "label": "main",
+        "title": "Spire Factory · 尖塔工坊",
+        "width": 1440,
+        "height": 960,
+        "minWidth": 1000,
+        "minHeight": 700,
+        "center": true,
+        "theme": "Light",
+        "backgroundColor": "#f2dfb9"
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; connect-src ipc: http://ipc.localhost; img-src 'self' asset: http://asset.localhost data: blob:; style-src 'self' 'unsafe-inline'; font-src 'self'; script-src 'self'",
+      "devCsp": "default-src 'self'; connect-src ipc: http://ipc.localhost http://127.0.0.1:1420 ws://127.0.0.1:1420; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; font-src 'self'; script-src 'self' 'unsafe-inline'"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["nsis"],
+    "shortDescription": "杀戮尖塔 2 角色与内容制作工具",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.ico"
+    ],
+    "windows": {
+      "nsis": {
+        "languages": ["SimpChinese", "English"],
+        "displayLanguageSelector": false
+      }
+    }
+  }
+}
