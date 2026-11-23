@@ -4,6 +4,13 @@
 
 # MakeSpire · 尖塔工坊
 
+<p align="center">
+  <img src="https://img.shields.io/badge/平台-Windows-2563eb?style=flat-square" alt="平台：Windows" />
+  <img src="https://img.shields.io/badge/桌面框架-Tauri%202-eab308?style=flat-square" alt="桌面框架：Tauri 2" />
+  <img src="https://img.shields.io/badge/编辑器-4%20类作品-2563eb?style=flat-square" alt="编辑器：4 类作品" />
+  <img src="https://img.shields.io/badge/数据-本地%20JSON-475569?style=flat-square" alt="数据：本地 JSON" />
+</p>
+
 尖塔工坊（Spire Factory）是面向《杀戮尖塔 2》同人创作的 Windows 桌面工作台。你可以把自定义角色、卡牌、遗物和药水整理到同一个项目，预览设定，并通过 JSON 备份或分享。
 
 ## 你可以做什么
